@@ -50,7 +50,7 @@ package com.videojs.providers{
         private var _bufferedTime:Number = 0;
 
         public function HLSProvider() {
-          Log.info("https://github.com/mangui/flashls/releases/tag/v0.4.1.1");
+          Log.info("https://github.com/mangui/flashls/releases/tag/v0.4.4.8");
           _hls = new HLS();
           _model = VideoJSModel.getInstance();
           _metadata = {};
@@ -259,8 +259,8 @@ package com.videojs.providers{
          * Should return the amount of media that has been buffered, in seconds, or 0 if
          * this value is unknown or unable to be determined (due to lack of duration data, etc)
          */
-        public function get buffered():Number {
-          return _bufferedTime;
+        public function get buffered():Array {
+          return [[0, _bufferedTime]];
         }
 
         /**
